@@ -9,7 +9,7 @@ sudo hwclock --systohc
 ```
 
 # Pacotes
-*Coisa pra pos instalacao do Arch
+*Coisa pra pos instalacao do Arch*
 ```
 sudo pacman -S base-devel
 sudo pacman -S archlinux-keyring
@@ -45,7 +45,7 @@ pacman -Ss gimp
 pacman -Qs package_name
 ```
 
-# #Atualizar e instalar o pacote:
+# Atualizar e instalar o pacote:
 ```
 sudo pacman -Syu package1 package2
 ```
@@ -152,24 +152,24 @@ reflector -c 'United States' -p https -f 5 --score 5 --save /etc/pacman.d/mirror
 ```
 
 # Yay Install
-*clone Repo
+*clone Repo*
 ```
 git clone https://aur.archlinux.org/yay.git
 ```
 
-*Entrar na past
+*Entrar na past*
 cd yay
 
-*Compilar build
+*Compilar build*
 ```
 makepkg -si
 ```
 
-*(Se precisar achar as dependecias)
+*(Se precisar achar as dependecias)*
 ```makepkg --syncdeps```
 
 # Screenshot (Scrot)
-*dpends: scrot, xclip
+*dpends: scrot, xclip*
 ```
 #mod+printscrn: take full screenshot, place in ~/img/scrot, copy to clipboard
 bindsym --release Print exec "scrot 'scrot-%Y-%m-%d_%h-%m-%s_$wx$h.png' -e 'mv $f ~/img/scrot/ && xclip -t image/png ~/img/scrot/$f -sel clip'"
