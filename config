@@ -191,15 +191,9 @@ new_window 1pixel
 
 # Provide Gaps to Windows. Increase/Decrease as you like.
 # Window borders
-#smart_borders on
-#gaps inner 2
-#gaps outer 2
-
-# Screenshot
-#bindsym Print exec "scrot -e 'mv $f ~/tmp &&  xclip -selection clipboard -t image/png -i ~/tmp/$n'; sleep 1; exec notify-send 'screenshot has been saved to ~/tmp'"
-
-#Screenshot n uso
-#bindsym $mod+Print --release exec "scrot -ue 'mv $f ~/tmp && xclip -selection clipboard -t image/png -i ~/tmp/$n'; sleep 1; exec notify-send 'screenshot has been saved to ~/tmp'"
+smart_borders on
+gaps inner 2
+gaps outer 2
 
 # Start i3bar to display a workspace bar (plus the system information i3st>
 # finds out, if available)
