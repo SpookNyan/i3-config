@@ -104,9 +104,7 @@ sudo pacman -D --asexplicit base linux linux-firmware
 sudo pacman -Rns $(pacman -Qtdq)
 ```
 
-# Limpando Cache de Pacote
-
-# O Pacman não limpa automaticamente as versões antigas ou desinstaladas dos pacotes. Isso permite downgrades e reinstalação fáceis a partir da pasta de cache. No entanto, à medida que o cache cresce internamente, ele pode ficar fora de controle. Temos um artigo dedicado sobre como limpar o cache do Pacman, mas aqui está a essência, este comando limpa todas as versões em cache de pacotes instalados e desinstalados, exceto os três mais recentes.
+# Limpar toda pasta cache
 ``
 paccache -r
 ``
