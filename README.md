@@ -174,7 +174,7 @@ makepkg -si
 #mod+printscrn: take full screenshot, place in ~/img/scrot, copy to clipboard
 bindsym --release Print exec "scrot 'scrot-%Y-%m-%d_%h-%m-%s_$wx$h.png' -e 'mv $f ~/img/scrot/ && xclip -t image/png ~/img/scrot/$f -sel clip'"
 ```
-
+- Capturar Area
 ```
 #mod+shift+printscrn: take selection screenshot, place in ~/img/scrot, copy to clipboard
 bindsym --release Shift+Print exec "scrot --select 'scrot-%Y-%m-%d_%h-%m-%s_$wx$h_snip.png' -e 'mv $f ~/img/scrot/ && xclip -t image/png ~/img/scrot/$f -sel clip'"
