@@ -11,9 +11,6 @@
 
 set $mod Mod4
 
-#Nitrogen
-exec --no-startup-id nitrogen --restore
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
@@ -35,7 +32,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -94,9 +91,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -179,7 +176,37 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+#bindsym $mod+r mode "resize"
+
+#Nitrogen
+exec --no-startup-id nitrogen --restore
+
+#Polybar
+#exec --no-startup-id polybar -r mybar
+
+#Polybar Sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/music.sh
+
+# Screen brightness controls
+# increase screen brightness
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+# decrease screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+
+#Luz background
+#bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
+
+# Start i3bar to display a workspace bar (plus the system information i3st>
+# finds out, if available)
+bar {
+status_command i3status
+mode hide
+#output primary
+#tray_output none
+font pango:DejaVu Sans Mono 6
+}
 
 #Pop up
 for_window [window_role="pop-up"] floating enable
@@ -190,21 +217,25 @@ for_window [class="^.*"] border pixel 1
 new_window 1pixel
 
 # Provide Gaps to Windows. Increase/Decrease as you like.
-# Window borders
 smart_borders on
-gaps inner 2
-gaps outer 2
-
-# Start i3bar to display a workspace bar (plus the system information i3st>
-# finds out, if available)
-bar {
-status_command i3status
-#mode hide
-#output primary
-#tray_output none
-font pango:DejaVu Sans Mono 6
-}
+gaps inner 1
+gaps outer 1
 
 #print da poha da tela
-bindsym --release Print exec "scrot 'scrot-%Y-%m-%d_%h-%m-%s_$wx$h.png' -e 'mv $f ~/img/scrot/ && xclip -t image/png ~/img/scrot/$f -sel clip'"
-bindsym --release Shift+Print exec "scrot --select 'scrot-%Y-%m-%d_%h-%m-%s_$wx$h_snip.png' -e 'mv $f ~/img/scrot/ && xclip -t image/png ~/img/scrot/$f -sel clip'"
+#Original
+#bindsym --release Print exec "scrot 'scrot-%Y-%m-%d_%h-%m-%s_$wx$h.png' -e 'mv $f ~/img/scrot/ && xclip -t image/png ~/img/scrot/$f -sel clip'"
+#bindsym --release Shift+Print exec "scrot --select 'scrot-%Y-%m-%d_%h-%m-%s_$wx$h_snip.png' -e 'mv $f ~/img/scrot/ && xclip -t image/png ~/img/scrot/$>
+
+# Meu Scrot
+bindsym --release Print exec "scrot 'scrot-%Y-%m-%d_%h-%m-%s_$wx$h.png' -e 'mv $f ~/Pictures/Screenshot && xclip -t image/png ~~/Pictures/Screenshot/$f -sel clip'"
+bindsym --release Shift+Print exec "scrot --select 'scrot-%Y-%m-%d_%h-%m-%s_$wx$h_snip.png' -e 'mv $f ~/Pictures/Screenshot && xclip -t image/png ~/Pictures/Screenshot$f -sel clip'"
+
+# Teste
+#~/Pictures/%Y-%m-%d-%H-%M-%S.png
+
+
+# Firefox
+bindsym $mod+w exec firefox
+
+# Files
+bindsym $mod+e exec nautilus
