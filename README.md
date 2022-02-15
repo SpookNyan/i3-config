@@ -14,6 +14,7 @@ sudo hwclock --systohc
 sudo pacman -S base-devel
 sudo pacman -S archlinux-keyring
 sudo pacman -S git go
+brightnessctl
 ```
 
 # Comandos pra instalacao
