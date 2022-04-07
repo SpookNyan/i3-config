@@ -11,12 +11,7 @@ sudo hwclock --systohc
 # Pacotes
 *Coisa pra pos instalacao do Arch*
 ```
-sudo pacman -S base-devel
-sudo pacman -S archlinux-keyring
-sudo pacman -S git go
-brightnessctl
-LXAppearance
-polkit-gnome
+sudo pacman -S base-devel archlinux-keyring git go brightnessctl lxappearance polkit-gnome
 ```
 
 # Comandos pra instalacao
