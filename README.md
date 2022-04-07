@@ -16,6 +16,7 @@ sudo pacman -S archlinux-keyring
 sudo pacman -S git go
 brightnessctl
 LXAppearance
+polkit-gnome
 ```
 
 # Comandos pra instalacao
