@@ -36,8 +36,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -202,10 +202,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 # finds out, if available)
 bar {
 status_command i3status
-mode hide
+#mode hide
 output primary
 #tray_output none
-font pango:DejaVu Sans Mono 6
+font pango:DejaVu Sans Mono 5
 }
 
 #Pop up
@@ -213,7 +213,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
 #Sem borda
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 new_window 1pixel
 
 # Provide Gaps to Windows. Increase/Decrease as you like.
@@ -235,7 +235,7 @@ bindsym --release Shift+Print exec "scrot --select 'scrot-%Y-%m-%d_%h-%m-%s_$wx$
 
 
 # Firefox
-bindsym $mod+w exec firefox-nightly
+bindsym $mod+w exec firefox
 
 # Files
 bindsym $mod+e exec nautilus
